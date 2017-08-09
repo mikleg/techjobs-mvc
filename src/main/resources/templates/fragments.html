@@ -27,5 +27,18 @@
         </div>
     </div>
 
+    <div th:fragment="list-print" th:if="${items} and ${items.size()}">
+        <div th:if="${items} and ${items.size()}">
+        <table class="job-listing" th:each="item, idx : ${items}" >
+            <tr th:each="elem, idx : ${item}" th:class="${idx.odd} ? 'odd'">
+                <td th:text="${elem.key}"></td>
+                <td th:text="${elem.value}"></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+
+
 </body>
 </html>

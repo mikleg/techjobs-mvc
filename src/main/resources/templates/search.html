@@ -28,17 +28,21 @@
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+            <input type="text"  name="searchTerm" id="searchTerm" />
         </p>
 
         <input type="submit" value="Search" />
     </form>
 
     <hr />
-
+    <!--it's working!-->
+    <p th:text="${par1}"> bormotuha1   </p>
+    <p th:text="${par2}"> bormotuha2   </p>
+    <div th:if="${items}">
+        <p th:text="${items.size()}"> bormotuha2   </p>
+    </div>
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
-
+    <div th:replace="fragments :: list-print"></div>
 </div>
-
 </body>
 </html>
