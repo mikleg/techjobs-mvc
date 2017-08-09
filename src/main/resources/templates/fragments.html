@@ -31,7 +31,7 @@
         <div th:if="${items} and ${items.size()}">
         <table class="job-listing" th:each="item, idx : ${items}" >
             <tr th:each="elem, idx : ${item}" th:class="${idx.odd} ? 'odd'">
-                <td th:text="${elem.key}"></td>
+                <td th:text="${#strings.capitalizeWords(elem.key)}"></td>
                 <td th:text="${elem.value}"></td>
             </tr>
         </table>
