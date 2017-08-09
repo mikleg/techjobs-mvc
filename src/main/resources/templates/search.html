@@ -28,7 +28,8 @@
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text"  name="searchTerm" id="searchTerm" />
+            <input type="text"  name="searchTerm" id="searchTerm" th:value="${aSearchTerm}"/>
+
         </p>
 
         <input type="submit" value="Search" />
@@ -38,6 +39,7 @@
 <!--    <p th:text="${par1}">    </p>
     <p th:text="${par2}">    </p>-->
     <div th:if="${items}">
+        <div>results:</div>
         <p th:text="${items.size()}">          </p>
 
     </div>

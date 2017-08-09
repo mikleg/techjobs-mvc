@@ -52,6 +52,7 @@ public class SearchController {
                 model.addAttribute("title", "All " + ListController.columnChoices.get(aSearchType) + " Values");
                 model.addAttribute("column", aSearchType);
                 model.addAttribute("items", items);
+                model.addAttribute("aSearchTerm", searchTerm);
                 /*model.addAttribute("par1", aSearchType);
                 model.addAttribute("par2", searchTerm);*/
 
