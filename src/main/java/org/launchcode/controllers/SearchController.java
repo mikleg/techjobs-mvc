@@ -15,14 +15,14 @@ import java.util.Optional;
  */
 @Controller
 @RequestMapping("search")
-public class SearchController {
+public class SearchController extends TechJobsController{
     private String lastChoise = "core competency";
 
     // TODO #1 - Create handler to process search request and display results
     @RequestMapping(value = "")
     public String search(Model model)
     {
-        model.addAttribute("columns", ListController.columnChoices);
+
         return "search";
     }
 
@@ -48,7 +48,7 @@ public class SearchController {
                 }
                 lastChoise = aSearchType;
 
-                model.addAttribute("title", "All " + ListController.columnChoices.get(aSearchType) + " Values");
+                model.addAttribute("title", "All " + getColumnChoices().get(aSearchType) + " Values");
                 model.addAttribute("column", aSearchType);
                 model.addAttribute("items", items);
                 model.addAttribute("aSearchTerm", searchTerm);
