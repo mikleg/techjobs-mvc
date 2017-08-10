@@ -52,8 +52,6 @@ public class SearchController extends TechJobsController{
                 model.addAttribute("column", aSearchType);
                 model.addAttribute("items", items);
                 model.addAttribute("aSearchTerm", searchTerm);
-                /*model.addAttribute("par1", aSearchType);
-                model.addAttribute("par2", searchTerm);*/
 
             return "search";
 

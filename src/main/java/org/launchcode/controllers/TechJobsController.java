@@ -26,6 +26,7 @@ public class TechJobsController
     @ModelAttribute("columns")
     public static HashMap<String, String> getColumnChoices()
     {
+
         return columnChoices;
     }
 }
