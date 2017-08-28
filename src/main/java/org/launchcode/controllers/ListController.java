@@ -29,12 +29,14 @@ public class ListController extends TechJobsController{
     public String listColumnValues(Model model, @RequestParam String column) {
 
         if (column.equals("all")) {
-            ArrayList<HashMap<String, String>> jobs = JobData.findAll();
+            Iterable<HashMap<String, String>> jobs = JobData.findAll();
+          //  ArrayList<HashMap<String, String>> jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
             model.addAttribute("items", jobs);
             return "list-jobs";
         } else {
-            ArrayList<String> items = JobData.findAll(column);
+            //ArrayList<String> items = JobData.findAll(column);
+            Iterable<String> items = JobData.findAll(column);
             model.addAttribute("title", "All " + getColumnChoices().get(column) + " Values");
             model.addAttribute("column", column);
             model.addAttribute("items", items);
@@ -46,13 +48,12 @@ public class ListController extends TechJobsController{
     @RequestMapping(value = "jobs")
     public String listJobsByColumnAndValue(Model model,
             @RequestParam String column, @RequestParam String value) {
-                    /*model.addAttribute("par1", aSearchType);
-                model.addAttribute("par2", searchTerm);*/
-        ArrayList<HashMap<String, String>> jobs = JobData.findByColumnAndValue(column, value);
+
+        //ArrayList<HashMap<String, String>> jobs = JobData.findByColumnAndValue(column, value);
+        Iterable<HashMap<String, String>> jobs = JobData.findByColumnAndValue(column, value);
         model.addAttribute("title", "Jobs with " + getColumnChoices().get(column) + ": " + value);
         model.addAttribute("items", jobs);
-        /*model.addAttribute("par1", column);
-        model.addAttribute("par2", value);*/
+
         return "list-jobs";
     }
 }

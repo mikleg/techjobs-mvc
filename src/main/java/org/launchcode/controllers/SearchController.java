@@ -28,7 +28,7 @@ public class SearchController extends TechJobsController{
 
     @RequestMapping(value = "results")
     public String listColumnValues(Model model, @RequestParam Optional<String> searchType, @RequestParam String searchTerm) {
-            ArrayList<HashMap<String, String>> items = new ArrayList<>();
+            Iterable<HashMap<String, String>> items = new ArrayList<>();
             String aSearchType = "";
 
             StringBuilder rrrr = new StringBuilder("");
